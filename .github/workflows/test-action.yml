@@ -1,0 +1,22 @@
+name: Test My Custom Action
+
+on:
+  workflow_dispatch:
+
+
+jobs:
+
+  testaction:
+    
+    runs-on: ubuntu-latest
+
+    
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      # - uses: actions/checkout@v2
+
+      - id: myjoke
+        uses: mickeygoussetorg/get-a-dad-joke@v1
+        
+      - name: Output Dad Joke
+        run: echo ${{ steps.myjoke.outputs.dad-joke }}
