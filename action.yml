@@ -11,6 +11,6 @@ runs:
     id: get-dad-joke
     run: |
       DADJOKE=$(curl -H "Accept: text/plain" https://icanhazdadjoke.com/)
-      echo "$JOKE"
+      echo "$DADJOKE"
       echo "::set-output name=joke::$DADJOKE"
     shell: bash
