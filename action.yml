@@ -1,0 +1,15 @@
+name: 'Get A Dad Joke'
+description: 'Everyone loves Dad Jokes!  I return a random Dad Joke from icanhazdadjoke'
+outputs:
+  dad-joke:
+    description: "The Dad Joke"
+    value: ${{ steps.get-dad-joke.outputs.joke }}
+runs:
+  using: "composite"
+  - name: Get Dad Joke
+        id: get-dad-joke
+        run: |
+          DADJOKE=$(curl -H "Accept: text/plain" https://icanhazdadjoke.com/)
+          echo "$JOKE"
+          echo "::set-output name=joke::$DADJOKE"
+        shell: bash
