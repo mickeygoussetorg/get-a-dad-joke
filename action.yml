@@ -6,10 +6,11 @@ outputs:
     value: ${{ steps.get-dad-joke.outputs.joke }}
 runs:
   using: "composite"
+  steps:
   - name: Get Dad Joke
-        id: get-dad-joke
-        run: |
-          DADJOKE=$(curl -H "Accept: text/plain" https://icanhazdadjoke.com/)
-          echo "$JOKE"
-          echo "::set-output name=joke::$DADJOKE"
-        shell: bash
+    id: get-dad-joke
+    run: |
+      DADJOKE=$(curl -H "Accept: text/plain" https://icanhazdadjoke.com/)
+      echo "$JOKE"
+      echo "::set-output name=joke::$DADJOKE"
+    shell: bash
