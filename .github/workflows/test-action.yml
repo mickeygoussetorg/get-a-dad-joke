@@ -16,7 +16,7 @@ jobs:
       # - uses: actions/checkout@v2
 
       - id: myjoke
-        uses: mickeygoussetorg/get-a-dad-joke@latest
+        uses: mickeygoussetorg/get-a-dad-joke@v1.0.0
         
       - name: Output Dad Joke
         run: echo ${{ steps.myjoke.outputs.dad-joke }}
