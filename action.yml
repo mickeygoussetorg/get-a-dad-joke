@@ -14,3 +14,6 @@ runs:
       echo "$DADJOKE"
       echo "::set-output name=joke::$DADJOKE"
     shell: bash
+branding:
+  icon: 'award'
+  color: 'black'
