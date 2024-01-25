@@ -12,7 +12,9 @@ runs:
     run: |
       DADJOKE=$(curl -H "Accept: text/plain" https://icanhazdadjoke.com/)
       echo "$DADJOKE"
-      echo "::set-output name=joke::$DADJOKE"
+      echo "joke<<EOF" >> $GITHUB_OUTPUT
+      echo "$DADJOKE" >> $GITHUB_OUTPUT
+      echo "EOF" >> $GITHUB_OUTPUT
     shell: bash
 branding:
   icon: 'award'
